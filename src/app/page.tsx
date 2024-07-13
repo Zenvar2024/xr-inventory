@@ -10,9 +10,6 @@ import Tacni from "./components/technical";
 import NavbarH from "./components/nav";
 
 
-// สมมต แก้เสร็จ
-
-
 export default function Home() {
   return (
     <div >
