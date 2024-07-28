@@ -89,7 +89,7 @@ const columns = [
 
 export default function Tablewater() {
   return (
-    <Table aria-label="Example table with dynamic content">
+    <Table aria-label="Example table with dynamic content"  >
       <TableHeader columns={columns}>
         {(column) => <TableColumn align="center" key={column.key}>{column.label}</TableColumn>}
       </TableHeader>

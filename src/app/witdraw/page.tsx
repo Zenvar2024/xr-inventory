@@ -14,41 +14,11 @@ export default function WithdrawPage() {
 
     return (
             <div>
-                
-        <Navbar>
-
-            <NavbarBrand className="">
-                <Image src="/logoxr.png" width={60}></Image>
-                <Link className="font-bold" href="/" >XR TECH THAILAND</Link>
-            </NavbarBrand>
-
-            <NavbarContent className="flex justify-evenly gap-10">
-                <NavbarItem>
-                    <Link color="foreground" href="/witdraw">Withdraw</Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link color="foreground" href="/ticket">Gameticket</Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link color="foreground" href="/stock">Stock</Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link color="foreground" href="/tacni">Tacnical</Link>
-                </NavbarItem>
-
-            </NavbarContent>
-
-            <NavbarContent justify="end">
-                <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="ghost"></Button>
-                </NavbarItem>
-            </NavbarContent>
-        </Navbar>
-
-                
-                <Tablewater/>
-
-
+                  <div className="flex justify-between px-10 py-5 " >
+                    <div className="self-center font-bold " > Water&Cool Cloth</div>
+                      <Button   as={Link} color="primary" href="#" variant="ghost">Add</Button>
+                    </div>
+                  <Tablewater/>
         </div>
 
     )

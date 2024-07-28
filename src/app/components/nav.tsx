@@ -12,14 +12,16 @@ export default function NavbarH() {
 
     return (
 
-<Navbar >
+<Navbar maxWidth="full" className="p-0"   >
 
-<NavbarBrand className="">
-  <Image src="/logoxr.png" width={60}></Image>
-  <p className="font-bold">XR TECH THAILAND</p>
+<NavbarBrand >
+  <Link href="/">
+    <Image  src="/logoxr.png"  width={60}  ></Image>
+    <p className="font-bold">XR TECH THAILAND</p>
+  </Link>
 </NavbarBrand>
 
-<NavbarContent className="flex justify-evenly gap-10"  >
+<NavbarContent className="flex justify-evenly gap-20"  >
   <NavbarItem>
     <Link color="foreground" href="/witdraw">Withdraw</Link>
   </NavbarItem>
@@ -40,6 +42,7 @@ export default function NavbarH() {
     <Button as={Login} color="primary" href="#" variant="ghost"></Button>
   </NavbarItem>
 </NavbarContent>
+
 </Navbar>
     )
 }

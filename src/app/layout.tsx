@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {NextUIProvider} from "@nextui-org/react";
+import NavbarH from "./components/nav";
 
 
 
@@ -20,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}><NextUIProvider >
-       
+      <body className="bg-amber-100 grid  justify-center p-3" > <NextUIProvider > 
+             <NavbarH />
         {children}
-         </NextUIProvider></body>
+               </NextUIProvider></body>
     </html>
   );
 }
