@@ -11,7 +11,7 @@ import { Image } from "@nextui-org/react";
 
 export default function NavbarH() {
   return (
-    <Navbar maxWidth="full" className="p-0">
+    <Navbar maxWidth="full">
       <NavbarBrand>
         <Link href="/">
           <Image src="/logoxr.png" width={60}></Image>
@@ -19,7 +19,7 @@ export default function NavbarH() {
         </Link>
       </NavbarBrand>
 
-      <NavbarContent className="flex justify-evenly gap-20">
+      <NavbarContent justify="center" className="gap-20">
         <NavbarItem>
           <Link color="foreground" href="/witdraw">
             Withdraw
