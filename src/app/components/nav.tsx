@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button , ButtonGroup} from "@nextui-org/button";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
 import Login from "./login";
@@ -12,33 +12,32 @@ export default function NavbarH() {
 
     return (
 
-<Navbar maxWidth="full" className="p-0"   >
+<Navbar maxWidth="full"  >
 
 <NavbarBrand >
   <Link href="/">
     <Image  src="/logoxr.png"  width={60}  ></Image>
-    <p className="font-bold">XR TECH THAILAND</p>
+    <h1 className="font-bold">XR TECH THAILAND</h1>
   </Link>
 </NavbarBrand>
 
-<NavbarContent className="flex justify-evenly gap-20"  >
-  <NavbarItem>
-    <Link color="foreground" href="/witdraw">Withdraw</Link>
-  </NavbarItem>
-  <NavbarItem>
-    <Link color="foreground" href="/ticket">Gameticket</Link>
-  </NavbarItem>
+<ButtonGroup   className="justify-evenly  "  >
+  <Button>
+    <Link  href="/witdraw">Withdraw</Link>
+    </Button>
+    <Button  >
+    <Link  href="/ticket">Gameticket</Link>
+    </Button>
+    <Button >
+    <Link  href="/stock" >Stock</Link>
+    </Button>
+    <Button >
+    <Link className="color-#eab308" href="/tacni">Tacnical</Link>
+  </Button>
+</ButtonGroup>
+
+<NavbarContent   justify="end"   >
   <NavbarItem >
-    <Link color="foreground" href="/stock" >Stock</Link>
-  </NavbarItem>
-  <NavbarItem>
-    <Link color="foreground" href="/tacni">Tacnical</Link>
-  </NavbarItem>
-
-</NavbarContent>
-
-<NavbarContent justify="end">
-  <NavbarItem>
     <Button as={Login} color="primary" href="#" variant="ghost"></Button>
   </NavbarItem>
 </NavbarContent>

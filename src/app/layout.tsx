@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-amber-100 grid  justify-center p-3" > <NextUIProvider > 
+      <body  > <NextUIProvider  > 
+        <div  className="w-full min-w-[100vw] min-h-screen overflow-y-scroll overflow-x-hidden  p-5">
              <NavbarH />
         {children}
+        </div>
                </NextUIProvider></body>
     </html>
   );
