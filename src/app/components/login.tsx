@@ -1,18 +1,42 @@
-'use client'
+"use client";
 import React from "react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link} from "@nextui-org/react";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Checkbox,
+  Input,
+  Link,
+} from "@nextui-org/react";
+import { staffs } from "@/constants/staff";
 
 export default function Login() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [input, setInput] = React.useState("");
+  const handleLogin = () => {
+    console.log("Login with ID: ", input);
+
+    const staffMember = staffs.find((staff) => staff.employee_id === input);
+
+    if (staffMember) {
+      const level = staffMember.position !== "Customer Support" ? 2 : 1;
+      console.log(`Welcome, You are level ${level}`, staffMember.name);
+      onOpenChange();
+    } else {
+      console.log("Invalid ID");
+    }
+  };
 
   return (
     <>
-      <Button onPress={onOpen} color="primary" variant="ghost">Login</Button>
-      <Modal 
-        isOpen={isOpen} 
-        onOpenChange={onOpenChange}
-        placement="top-center"
-      >
+      <Button onPress={onOpen} color="primary" variant="ghost">
+        Login
+      </Button>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>
@@ -20,12 +44,13 @@ export default function Login() {
               <ModalBody>
                 <Input
                   autoFocus
-                  
                   label="ID"
                   placeholder="Enter your employee ID"
                   variant="bordered"
+                  className="text-black"
+                  onChange={(e) => setInput(e.target.value)}
                 />
-                
+
                 <div className="flex py-2 px-1 justify-between">
                   <Checkbox
                     classNames={{
@@ -34,14 +59,18 @@ export default function Login() {
                   >
                     Remember me
                   </Checkbox>
-                  
                 </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="flat" onPress={onClose}>
                   Close
                 </Button>
-                <Button color="primary" onPress={onClose}>
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    handleLogin();
+                  }}
+                >
                   Sign in
                 </Button>
               </ModalFooter>
