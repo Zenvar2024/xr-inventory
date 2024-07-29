@@ -13,22 +13,44 @@ import {
   Link,
 } from "@nextui-org/react";
 import { staffs } from "@/constants/staff";
+import Swal from "sweetalert2";
 
 export default function Login() {
+  
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [input, setInput] = React.useState("");
   const handleLogin = () => {
     console.log("Login with ID: ", input);
 
     const staffMember = staffs.find((staff) => staff.employee_id === input);
+    
+  
 
     if (staffMember) {
       const level = staffMember.position !== "Customer Support" ? 2 : 1;
       console.log(`Welcome, You are level ${level}`, staffMember.name);
       onOpenChange();
+        
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title:staffMember.position ,
+        text: staffMember.name   ,
+        showConfirmButton: false,
+        timer: 1800
+      });
+
     } else {
-      console.log("Invalid ID");
-    }
+      
+          Swal.fire({
+          title: "INVAILD ID",
+          text: "Try Again Empeo ID !!",
+          icon: "error"
+        });
+
+
+
+      }
   };
 
   return (
@@ -45,7 +67,7 @@ export default function Login() {
                 <Input
                   autoFocus
                   label="ID"
-                  placeholder="Enter your employee ID"
+                  placeholder="Enter your empeo ID"
                   variant="bordered"
                   className="text-black"
                   onChange={(e) => setInput(e.target.value)}

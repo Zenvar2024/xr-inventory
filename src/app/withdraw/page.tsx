@@ -15,7 +15,7 @@ export default function WithdrawPage() {
 
   return (
     <div>
-      <div className="flex justify-between px-10 py-5 ">
+      <div className="flex justify-between px-10 py-10 ">
         <div className="self-center font-bold "> Water&Cool Cloth</div>
         {user && (
           <Button as={Link} color="primary" href="#" variant="ghost">

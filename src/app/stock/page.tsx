@@ -7,7 +7,7 @@ import Tablestock from "../components/tablesstcok";
 
 
 
-export default function stockpage() {
+export default function Stockpage() {
 
 
     return (

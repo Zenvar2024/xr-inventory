@@ -9,11 +9,11 @@ import Finishjop from "./compunents/finished";
 
 
 
-export default function Tacnicalpage() {
+export default function Tecnicalpage() {
 
 
     return (
-            <div className="flex justify-evenly gap-5 py-5">
+            <div className="flex justify-evenly gap-5 py-10">
                 <Newjop/> <Progress />    <Finishjop/>
              
             </div>
