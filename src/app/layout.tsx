@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
-import NavbarH from "./components/nav";
+import Nav_Bar from "./components/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-amber-100 grid  justify-center p-5 ">
-        <NextUIProvider>
-          <div className=" w-full min-w-[100vw] min-h-screen overflow-y-scroll overflow-x-hidden px-16">
-            <NavbarH />
+      <body >
+        <NextUIProvider  >
+        <main className="dark text-foreground bg-background min-h-screen">
+             <Nav_Bar />
+             <div className="px-3">
             {children}
-          </div>
+            </div>
+            </main>
         </NextUIProvider>
       </body>
     </html>

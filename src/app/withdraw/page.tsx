@@ -8,17 +8,17 @@ import {
 } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
-import Tablewater from "../components/table";
+import Tablewater from "../components/table/table";
 
 export default function WithdrawPage() {
   const user = true;
 
   return (
     <div>
-      <div className="flex justify-between px-10 py-10 ">
+      <div className="flex justify-between px-10 py-5 ">
         <div className="self-center font-bold "> Water&Cool Cloth</div>
         {user && (
-          <Button as={Link} color="primary" href="#" variant="ghost">
+          <Button as={Link} color="default" href="#" variant="ghost">
             Add
           </Button>
         )}

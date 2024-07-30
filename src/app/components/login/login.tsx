@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from "react";
 import {
   Modal,
@@ -10,7 +10,7 @@ import {
   useDisclosure,
   Checkbox,
   Input,
-  Link,
+  
 } from "@nextui-org/react";
 import { staffs } from "@/constants/staff";
 import Swal from "sweetalert2";
@@ -55,7 +55,7 @@ export default function Login() {
 
   return (
     <>
-      <Button onPress={onOpen} color="primary" variant="ghost">
+      <Button onPress={onOpen} color="warning" variant="ghost">
         Login
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
